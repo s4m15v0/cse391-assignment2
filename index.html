@@ -1,83 +1,156 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
-    <div>            
-    
-            <div>
-                <ul>
-                    <li><a href="http://index.htm#about" target="_blank">About</a></li>
-                    <li><a href="http://index.htm#hobby" target="_blank">Hobby</a></li>
-                    
-                    			
-            </ul>
-            </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 2</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
 
-            <div>
-                <br>
-                <h2 align="center">Quote Box</h2><br>
-            </div>
-
-            <div>
-                <div>
-                    <h2></h2>                                        
-                </div>
-                <div style="margin:10px">
-                    <div style="width:20%;margin:auto">
-                        <button>Press</button>
-                        <button>Press</button>
-                        <button>Press</button>
-                        <button>Press</button>
-                    </div>
-                </div>
-            </div>
-            <br><br>
-
-            <div style="margin-top:10px;margin-left:75px">
-                <pre style="display:inline-block">Convert </pre><input type="number">
-                <select name="convert">
-                    <option value="lb_to_kg">lb to kg</option>
-                    <option value="kg_to_lb">kg to lb</option>
-                </select>
-                <button>go</button>
-                <p style="display:inline-block"></p>
-            </div>     
-
-
-            <div style="margin-top:10px;margin-left:75px"><br><br>
-                <pre style="display:inline-block">Input Series of Number </pre>
-                <input type="text">
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-                <p></p>
-            </div> 
-
-            <div style="margin-top:10px;margin-left:75px"><br><br>
-                <p>Magic!</p><br>
-                <textarea name="magic_text" cols="80" rows="20"></textarea><br><br><br>
-                <button>Clear It</button>
-                <button>Capitalize</button>
-                <button>Sort</button>
-                <button>Reverse</button>
-                <button>Strip Blank</button>
-                <button>Add Numbers</button>
-                <button>Shuffle</button><br><br><br><br><br><br><br><br><br>
-            </div>      
-
-
-            <div>            
-                    <p><button>Last Modified</button><p></p>
-                    All rights reserved</p>
-            </div>
-        
+  <body>
+    <div class="inner">
+      <h3 class="cen">Quote Box</h3>
+      <div id="inner1">
+        <p id="something">Something</p>
+      </div>
+      <div class="s">
+        <button class="bton" id="red"></button>
+        <button class="bton" id="green"></button>
+        <button class="bton" id="blue"></button>
+        <button class="bton" id="orange"></button>
+      </div>
     </div>
-    <script src="code.js"></script>
-</body>
+    <div>
+      <h3 class="cen">Hero Converter</h3>
+      <span
+        >Convert
+        <input id="quantity" type="number" placeholder="Enter an ammount" />
+        <select id="my-select">
+          <option value="lb">lb to kg</option>
+          <option value="kg">kg to lb</option>
+        </select>
+        <button id="btn" type="button">Go</button>
+        <span id="total"></span>
+      </span>
+    </div>
+    <div>
+      <h3 class="cen">Part 2</h3>
+      <br />
+
+      <input id="arr" type="text" placeholder="Enter numbers" />
+      <button id="sub" type="button">Submit</button>
+
+      <p>Max : <span id="max">00</span></p>
+      <p>Min : <span id="min">00</span></p>
+      <p>Sum : <span id="sum">00</span></p>
+      <p>Average : <span id="average">00</span></p>
+      <p>Reverse : <span id="reverse">00</span></p>
+    </div>
+    <div>
+      <h3 id="cen1" class="cen">Magic</h3>
+      <input id="sent" type="text"  placeholder="Type something to see magic"/ >
+    </br>
+      <button id="sbmt" type="button">Submit</button>
+      <br />
+      <br>
+      <textarea name="" id="ar" cols="30" rows="10" placeholder="See magic here!"></textarea>
+      <br />
+  </br>
+      <button id="clr" type="submit">Clear It</button>
+      <button id="cptl" type="button">Capitalize</button>
+      <button id="sort" type="button">Sort</button>
+      <button id="rever" type="button">Reverse</button>
+      <button id="strip" type="button">Strip Blank</button>
+      <button id="adddd" type="button">Add Number</button>
+      <button id="shuffle" type="button">Shuffle</button>
+    </div>
+    <script>
+      const a = [
+        `To handle yourself, use your head; to handle others, use your heart. -Eleanor Roosevelt`
+        ,
+        ` Believe you can and you're halfway there. -Theodore Roosevelt`,
+        `Strive not to be a success, but rather to be of value.-Albert Einstein`,
+      ];
+      const something = document.getElementById("something");
+      function b() {
+        const c = Math.floor(Math.random() * 3);
+        return a[c];
+      }
+      something.innerText = b();
+      document.getElementById("red").addEventListener("click", function () {
+        document.getElementById("inner1").style.backgroundColor = "red";
+        document.getElementById("inner1").style.border = "thick solid green";
+        document.getElementById("inner1").style.color = "yellow";
+      });
+      document.getElementById("green").addEventListener("click", function () {
+        document.getElementById("inner1").style.backgroundColor = "green";
+        document.getElementById("inner1").style.border = "thick solid red";
+        document.getElementById("inner1").style.color = "red";
+        document.getElementById("inner1").style.fontWeight = "bolder";
+      });
+      document.getElementById("blue").addEventListener("click", function () {
+        document.getElementById("inner1").style.backgroundColor = "blue";
+        document.getElementById("inner1").style.border = "thick solid yellow";
+      });
+      document.getElementById("orange").addEventListener("click", function () {
+        document.getElementById("inner1").style.backgroundColor = "orange";
+        document.getElementById("inner1").style.border = "thick solid blue";
+        document.getElementById("inner1").style.color = "white";
+      });
+      document.getElementById("btn").addEventListener("click", function () {
+        if (document.getElementById("my-select").value == "lb") {
+          document.getElementById("total").innerText =
+            document.getElementById("quantity").value * 0.4536;
+        } else {
+          document.getElementById("total").innerText =
+            document.getElementById("quantity").value * 2.2046;
+        }
+      });
+      document.getElementById("sub").addEventListener("click", function () {
+        var g = document.getElementById("arr").value;
+        var k = g.split(",");
+        document.getElementById("max").innerText = Math.max(...k);
+        document.getElementById("min").innerText = Math.min(...k);
+        function ad(m) {
+          var s = 0;
+          for (var i = 0; i < m.length; i++) {
+            var t = parseFloat(m[i]);
+            s = s + t;
+          }
+          return s;
+        }
+        document.getElementById("sum").innerText = ad(k);
+        function avg(e) {
+          var y = ad(e);
+          var w = y / e.length;
+          return w;
+        }
+        document.getElementById("average").innerText = avg(k);
+        function rev(p) {
+          z = p.reverse();
+          return z;
+        }
+        document.getElementById("reverse").innerText = rev(k);
+      });
+      area = [];
+      document.getElementById("sbmt").addEventListener("click", function () {
+        var q = document.getElementById("sent").value;
+        area.push(q);
+        for (var c=0;c<area.length;c++){
+          document.getElementById("ar").innerText=area[c]+"\n";
+        }
+      });
+
+      document.getElementById("clr").addEventListener("click", function () {
+        document.getElementById("ar").innerText = "";
+        document.getElementById("sent").value = "";
+      });
+      document.getElementById("cptl").addEventListener("click",function(){
+        document.getElementById("ar").innerText = area[0].toUpperCase();
+        console.log(area[0].toUpperCase());
+
+      })
+      
+    </script>
+  </body>
 </html>
